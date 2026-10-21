@@ -5,7 +5,7 @@ public class Genrtator : MonoBehaviour
 {
     private List<GameObject> _cubes;
 
-    int randomNumCubes;
+    float randomNumCubes;
 
     public Vector2 positionRange = new Vector2(10f, 10f);
 
@@ -31,6 +31,14 @@ public class Genrtator : MonoBehaviour
         {
             GameObject cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
             _cubes.Add(cube);
+
+            float cubePositionX = Random.Range(-positionRange.x, positionRange.x + 1);
+            float cubePositionZ = Random.Range(-positionRange.y, positionRange.y + 1);
+
+            cube.transform.position.x = cubePositionX;
+            cube.transform.position.z = cubePositionZ;
+
+            cube.transform.localScale = Vector3.one * Random.Range(minCubeYSize, maxCubeYSize+1);
         }
         
     }
