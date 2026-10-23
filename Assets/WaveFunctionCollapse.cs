@@ -11,7 +11,7 @@ public class WaveFunctionCollapse : MonoBehaviour
     public List<Cell> gridComponents;
     public Cell cellObj;
 
-    public Tile backupTile;
+    public Tile[] backupTile;
 
     private int iteration;
 
@@ -57,12 +57,14 @@ public class WaveFunctionCollapse : MonoBehaviour
         cellToCollapse.collapsed = true;
         try
         {
+
             Tile selectedTile = cellToCollapse.tileOptions[UnityEngine.Random.Range(0, cellToCollapse.tileOptions.Length)];
             cellToCollapse.tileOptions = new Tile[] { selectedTile };
         }
         catch
         {
-            Tile selectedTile = backupTile;
+
+            Tile selectedTile = backupTile[UnityEngine.Random.Range(0,backupTile.Length)];
             cellToCollapse.tileOptions = new Tile[] { selectedTile };
         }
 
