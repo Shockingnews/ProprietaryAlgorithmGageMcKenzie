@@ -121,6 +121,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7635759942792877923}
+  - component: {fileID: -4370417414994639992}
+  - component: {fileID: -3278727356808933683}
   m_Layer: 0
   m_Name: cubeParent
   m_TagString: Untagged
@@ -137,10 +139,50 @@ Transform:
   m_GameObject: {fileID: 4645037718484192908}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.5, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 9053717043279637494}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-4370417414994639992
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4645037718484192908}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 008034a0f9a9c0b49aa4251bf486ddd6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::test
+  upNeighbours:
+  - {fileID: -4500855169628230241, guid: c6ba9c03786a0554f938c8f47e65c8f9, type: 3}
+  - {fileID: -3617982625786992769, guid: 86aa3fc765a686b40855cc185ba3c083, type: 3}
+  rightNeighbours:
+  - {fileID: -445238234024221140, guid: 01271cf9c3b96a6459117d085793376e, type: 3}
+  - {fileID: -1332554895768029703, guid: 785aa6c903ef70845890c34280711e2d, type: 3}
+  - {fileID: 1776960045982121826, guid: 6d40dfc621db94e46a05354ed96d7f83, type: 3}
+  downNeighbours:
+  - {fileID: -445238234024221140, guid: 01271cf9c3b96a6459117d085793376e, type: 3}
+  - {fileID: 6668610644090321598, guid: 0effd91ec3d34d14c9b7dfca22ae0d49, type: 3}
+  - {fileID: -1332554895768029703, guid: 785aa6c903ef70845890c34280711e2d, type: 3}
+  - {fileID: -3617982625786992769, guid: 86aa3fc765a686b40855cc185ba3c083, type: 3}
+  leftNeighbours:
+  - {fileID: -4500855169628230241, guid: c6ba9c03786a0554f938c8f47e65c8f9, type: 3}
+  - {fileID: 6668610644090321598, guid: 0effd91ec3d34d14c9b7dfca22ae0d49, type: 3}
+  - {fileID: 1776960045982121826, guid: 6d40dfc621db94e46a05354ed96d7f83, type: 3}
+--- !u!114 &-3278727356808933683
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4645037718484192908}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e285be56121eb6746a9538f9cdfc01f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HightCHange

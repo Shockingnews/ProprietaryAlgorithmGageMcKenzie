@@ -4,6 +4,9 @@ using System.Collections.Generic;
 public class Genrtator : MonoBehaviour
 {
     public GameObject cubePrefab;
+    public GameObject roadPrefab;
+
+    private List<GameObject> _roads = new List<GameObject>();
 
     private List<GameObject> _cubes = new List<GameObject>();
 
@@ -20,6 +23,8 @@ public class Genrtator : MonoBehaviour
     float maxCubeYSize = 10f;
     public  bool isStarted = true;
 
+    public int randomSeed = -1;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -33,6 +38,11 @@ public class Genrtator : MonoBehaviour
     {
         if (isStarted)
         {
+            if (randomSeed >= 0)
+            {
+                Random.InitState(randomSeed);
+            }
+                
             GenerateCubes(randomNumCubes);
         }
         CheckPos();
@@ -55,6 +65,8 @@ public class Genrtator : MonoBehaviour
             
             GameObject cube = GameObject.Instantiate(cubePrefab);
             Debug.Log(i);
+            Color randomColor = new Color(0f, 0f, Random.value);
+            cube.GetComponentInChildren<Renderer>().material.color = randomColor;
 
             cubePositionX = Random.Range(-positionRange.x, positionRange.x + 1);
             cubePositionZ = Random.Range(-positionRange.y, positionRange.y + 1);
@@ -81,6 +93,8 @@ public class Genrtator : MonoBehaviour
         {
             GameObject cube = GameObject.Instantiate(cubePrefab);
             Debug.Log(i);
+            Color randomColor = new Color(0f, 0f, Random.value);
+            cube.GetComponentInChildren<Renderer>().material.color = randomColor;
 
             cubePositionX = Random.Range(-positionRange.x, positionRange.x + 1);
             cubePositionZ = Random.Range(-positionRange.y, positionRange.y + 1);
